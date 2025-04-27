@@ -1,29 +1,82 @@
-### Start Up
+# Deep Learning Project 1
 
-First look into the `dataset_explore.ipynb` and get familiar with the data.
+This project builds a simple neural network framework from scratch and applies it to the MNIST dataset. Main functionalities include:
 
-### Codes need your implementation
+- Dataset exploration and visualization
+- Neural network model construction
+- Training curve plotting
+- Weight visualization
+- Hyperparameter search (learning rate, activation function, optimizer, etc.)
+- Model saving and loading
 
-1. `op.py` 
-   Implement the forward and backward function of `class Linear`
-   Implement the `MultiCrossEntropyLoss`. Note that the `Softmax` layer could be included in the `MultiCrossEntropyLoss`.
-   Try to implement `conv2D`, do not worry about the efficiency.
-   You're welcome to implement other complicated layer (e.g.  ResNet Block or Bottleneck)
-2. `models.py` You may freely edit or write your own model structure.
-3. `mynn/lr_scheduler.py` You may implement different learning rate scheduler in it.
-4. `MomentGD` in `optimizer.py`
-5. Modifications in `runner.py` if needed when your model structure is slightly different from the given example.
+## Project Structure
 
+```
+|-- best_models/                # Best trained models
+|-- dataset/                    # Original MNIST dataset
+|-- draw_tools/                 # Tools for plotting curves and weights
+|-- figs/                       # Generated figures during training
+|-- mynn/                       # Custom neural network framework
+|-- saved_models/               # Other saved models
+|-- dataset_explore.ipynb        # Dataset exploration notebook
+|-- hyperparameter_search.py    # Hyperparameter search script
+|-- test_model.py                # Model testing script
+|-- test_train.py                # Model training script
+|-- weight_visualization.py      # Weight visualization script
+|-- idx.pickle                   # Auxiliary index file
+|-- README.md                    # Project documentation
+```
 
-### Train the model.
+## Quick Start
 
-Open test_train.py, modify parameters and run it.
+### Clone the repository
 
-If you want to train the model on your own dataset, just change the values of variable *train_images_path* and *train_labels_path*
+```bash
+git clone https://github.com/JunruQ/dlpj1.git
+cd dlpj1
+```
 
-### Test the model.
+### Download the trained model
 
-Open test_model.py, specify the saved model's path and the test dataset's path, then run the script, the script will output the accuracy on the test dataset.
+[Click here to download `best_model.pickle`](https://drive.google.com/file/d/1yY3J7IjH1q2S4V2NG_sEgkFQWZIkSFBd)
 
+Place it under the `best_models/` directory.
 
+### Install dependencies
+
+The project mainly uses standard Python libraries. (If you want to run Jupyter notebooks, make sure to install `jupyter`.)
+
+### Run Examples
+
+Train a new model:
+```bash
+python test_train.py
+```
+
+Test the best saved model:
+```bash
+python test_model.py
+```
+
+Perform hyperparameter search:
+```bash
+python hyperparameter_search.py
+```
+
+Visualize the model weights:
+```bash
+python weight_visualization.py
+```
+
+## Main Features
+
+- **Training Curves**: Plot loss and accuracy curves across epochs, saved under `figs/`
+- **Activation Function Comparison**: Compare performance of ReLU, LeakyReLU, etc.
+- **Learning Rate Scheduler Comparison**: Support for StepLR, MultiStepLR, ExponentialLR
+- **Weight Visualization**: Visualize the weights of the first layer
+- **Model Saving**: Save the model with the best validation performance
+
+## Contact
+
+For questions or suggestions, feel free to open an [issue](https://github.com/JunruQ/dlpj1/issues)!
 
