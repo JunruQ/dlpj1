@@ -1,0 +1,8 @@
+saved_models
+best_models
+idx.pickle
+dataset
+figs
+.DS_Store
+__pycache__/
+*.pyc
