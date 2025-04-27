@@ -13,17 +13,12 @@ This project builds a simple neural network framework from scratch and applies i
 
 ```
 |-- best_models/                # Best trained models
-|-- dataset/                    # Original MNIST dataset
 |-- draw_tools/                 # Tools for plotting curves and weights
-|-- figs/                       # Generated figures during training
 |-- mynn/                       # Custom neural network framework
-|-- saved_models/               # Other saved models
 |-- dataset_explore.ipynb        # Dataset exploration notebook
-|-- hyperparameter_search.py    # Hyperparameter search script
 |-- test_model.py                # Model testing script
 |-- test_train.py                # Model training script
 |-- weight_visualization.py      # Weight visualization script
-|-- idx.pickle                   # Auxiliary index file
 |-- README.md                    # Project documentation
 ```
 
@@ -56,11 +51,6 @@ python test_train.py
 Test the best saved model:
 ```bash
 python test_model.py
-```
-
-Perform hyperparameter search:
-```bash
-python hyperparameter_search.py
 ```
 
 Visualize the model weights:
